@@ -1,0 +1,41 @@
+{
+  "blocklist_sha256": "d487620c1c3654687d676ab4038dd8269b40ffd3df3d7047b084f5c2c8fa0106",
+  "domain_rule_count": 188,
+  "expanded_entry_count": 189,
+  "regex_rule_count": 1,
+  "root": "category-ai-!cn",
+  "source_entry_types": {
+    "domain": 158,
+    "full": 30,
+    "regexp": 1
+  },
+  "source_file_count": 23,
+  "source_sha256": {
+    "anthropic": "5f363bc0857863771a8c1adaf9f59062ad58885e30780fe29c22d281e7444e97",
+    "bytedance-ai-!cn": "80d8de4aea01467717758e0616799c22334f95f8a14e585d18f83e9351a90b95",
+    "category-ai-!cn": "5ff932f1c906b2ce699eeaf03fd6101d70952c6166913f04f3d3a4e30b6c251a",
+    "cerebras": "713ea33f6828bb2ac34db413204ea4ddb5d8740aef64e521f46f55fbc99d771d",
+    "comfy": "11d562b3473ef780ea2861e059c143bacd327738127aa5611a07665bf59930b1",
+    "comfy-ui-launcher": "0ef0695fa9afb015d86d069c45f52c3cdd4954fcbf6b3b24c479c85c16295d64",
+    "cursor": "963a78363ff86e87ae10859baa5f2dc7e3184efce13ac6e158bb2e698228bf5d",
+    "dola": "e10f0c2919908eae6c3c35bca0288821e5a4a568bcd3316ee7b6c6e0da82e907",
+    "elevenlabs": "4c284a7e5947f4a40d40c9dc8fedf3e9e3091db0c7680b913b2b19db36ebd561",
+    "envato": "07df2d1f56a06149222183b025dcdb2ef4db3eb49ea0a6d1ba864cbd260f6f3b",
+    "github-copilot": "c2fd77b96f85fc206b810addf081a08ae7be3a1b80c8378b74a3d72071b74990",
+    "google-deepmind": "191248b6032c75de86ec243da0b1a6e036e784fe58de2eb47076a48f45424de1",
+    "groq": "d779541783d4c835ad341a13ae3c3a008bfa3e535b46f79518b92bdef17588bb",
+    "huggingface": "67f5861b31232701f884efd38d9436dd89183fccbd01d6f10d791b9ef6fbf4b8",
+    "jetbrains-ai": "b1bb655fc82a45311745ef0513dc6889f76cb4bfc0cd9cd563788b5e502b6a53",
+    "liveperson": "2e146391a816f4497b0a987f2d7edfb0e7e0e11ae450e47a4c0779a0868d7e22",
+    "manus": "3fa777650b51936dd5f36c7f4763a025f2ed46570fbb4adc63e48eaaa14d1de5",
+    "openai": "8854223a767714a2b463f4f26ad5b70d2ea9452c5d16318addbe21cfe56dc91b",
+    "perplexity": "0c9d190a243e1fbd6b4739db086ec30af34a72a845dd36203b8befcab8a44601",
+    "poe": "e689a8d337b64bcf760e5d8dfe03e3d29d8558063db93acba2d1d6eb9c11003a",
+    "windsurf": "d6d082e40d180efbabde3b1a5bd8fe1bdc804f1a11b79d2128fe41e0b4dc4e16",
+    "xai": "1e15c6018174f58f6a2f3710c84566909eee45a8092247280d244cf8ea7cd928",
+    "youmind": "8c5290267a6337eac913289072e61903e4145db16ce178cb88f303760b37af73"
+  },
+  "total_rule_count": 189,
+  "upstream_commit": null,
+  "upstream_commit_date": null
+}

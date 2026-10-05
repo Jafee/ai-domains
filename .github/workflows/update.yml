@@ -1,0 +1,48 @@
+name: Update AI domains
+
+'on':
+  schedule:
+    # Monday 08:17 in Asia/Singapore and Asia/Shanghai (UTC+8).
+    - cron: '17 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ai-domains
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Test generation logic
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Fetch upstream and generate the subscription
+        run: python3 scripts/update.py
+
+      - name: Verify the generated files
+        run: python3 scripts/update.py --snapshot sources.json --check
+
+      - name: Commit and push changed output
+        env:
+          UPDATE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          git add -- adguard.txt sources.json metadata.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Update AI domain subscription'
+          git push origin "HEAD:refs/heads/$UPDATE_BRANCH"

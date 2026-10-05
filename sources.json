@@ -1,0 +1,32 @@
+{
+  "acquisition": "Complete line-numbered raw-file contents returned by web.run; branch not pinned to a commit.",
+  "files": {
+    "anthropic": "anthropic.com\nclau.de\nclaude.ai\nclaude.com\nclaude.dev\nclaudemcpclient.com\nclaudemcpcontent.com\nclaudeusercontent.com\nfull:servd-anthropic-website.b-cdn.net\n",
+    "bytedance-ai-!cn": "include:dola\ncoze.com @!cn\nmarscode.com @!cn\ntrae.ai @!cn\n",
+    "category-ai-!cn": "include:anthropic\ninclude:bytedance-ai-!cn\ninclude:cerebras\ninclude:comfy\ninclude:cursor\ninclude:elevenlabs\ninclude:envato\ninclude:github-copilot\ninclude:google-deepmind\ninclude:groq\ninclude:huggingface\ninclude:jetbrains-ai\ninclude:liveperson\ninclude:manus\ninclude:openai\ninclude:perplexity\ninclude:poe\ninclude:windsurf\ninclude:xai\ninclude:youmind\ncoderabbit.ai\ncoderabbit.gallery.vsassets.io\ncohere.ai\ncohere.com\ncopilot-stg.com\ncopilot.cloud.microsoft\ncopilot.com\ncopilot.microsoft.com\ndeepwiki.com\ndeepwiki.org\nclipdrop.co\njasper.ai\nkimi.ai\nmoonshot.ai\nmeta.ai\nmetaaivm.com\nmuse.ai\nagentclientprotocol.com\nanythingllm.com\narena.ai\nchutes.ai\nclawhub.ai\ncrewai.com\ndevin.ai\ndiabrowser.com\ndiabrowser.engineering\ndify.ai\ndreamgen.com\nduck.ai\ngateway.ai.cloudflare.com\nh2o.ai\nkiro.dev\nlangchain.com\nlmstudio.ai\nlovart.ai\nmidjourney.com\nminimax.io\nmistral.ai\nmozilla.ai\nnotegpt.io\nnovelai.net\nollama.com\nopenart.ai\nopenclaw.ai\nopencode.ai\nopenrouter.ai\nopenspec.dev\nplannotator.ai\nqoder.com\nsider.ai\nspicywriter.com\ntalkai.info\ntapnow.ai\ntripo3d.ai\n",
+    "cerebras": "cerebras.ai\n",
+    "comfy": "include:comfy-ui-launcher\ncomfy.org\ncomfyci.org\ncomfyregistry.org\n",
+    "comfy-ui-launcher": "oystermercury.top\n",
+    "cursor": "cursor-cdn.com\ncursor.com\ncursor.sh\ncursorapi.com\n",
+    "dola": "cici.com @!cn\nciciai.com @!cn\nciciaicdn.com @!cn\ndola.com @!cn\n",
+    "elevenlabs": "elevenlabs.com\nelevenlabs.io\n",
+    "envato": "envato-static.com\nenvato.com\nenvatousercontent.com\nthemeforest.net\n",
+    "github-copilot": "githubcopilot.com\nfull:copilot-proxy.githubusercontent.com\nfull:copilot-workspace.githubnext.com\nfull:copilotprodattachments.blob.core.windows.net\nfull:copilot-telemetry-service.githubusercontent.com @ads\nfull:copilot-telemetry.githubusercontent.com @ads\n",
+    "google-deepmind": "deepmind.com\ndeepmind.google\ngeller-pa.googleapis.com\ngenerativelanguage.googleapis.com\nproactivebackend-pa.googleapis.com\nrobinfrontend-pa.googleapis.com\nfull:ai.google.dev\nfull:alkalicore-pa.clients6.google.com\nfull:alkalimakersuite-pa.clients6.google.com\nfull:webchannel-alkalimakersuite-pa.clients6.google.com\ngenerativeai.google\nmakersuite.google.com\nai.studio\naistudio.google.com\nbard.google.com\ngemini.google\ngemini.google.com\ngemini.gstatic.com\nfull:geminiweb-pa.clients.google.com\nfull:geminiweb-pa.clients6.google.com\nfull:cloudaicompanion.googleapis.com\nfull:cloudcode-pa.googleapis.com\nfull:daily-cloudcode-pa.googleapis.com\nfull:notebooklm-pa.googleapis.com\nfull:notebooklm.googleapis.com\nlabstailwind.pa.googleapis.com\nnotebook.google\nnotebook.google.com\nnotebooklm.google\nnotebooklm.google.com\njules.google\njules.google.com\nlabs.google\nlabs.google.com\nflow.google\nflow.google.com\naisandbox-pa.googleapis.com\naicode.googleapis.com\naida.googleapis.com\nopal.google\nopal.google.com\nfull:antigravity-pa.googleapis.com\nfull:antigravity.googleapis.com\nantigravity.google\nantigravity-unleash.goog\nstitch.withgoogle.com\n",
+    "groq": "groq.com\n",
+    "huggingface": "hf.co\nhf.space\nhuggingface.co\n",
+    "jetbrains-ai": "grazie.ai\ngrazie.aws.intellij.net\njetbrains.ai\n",
+    "liveperson": "liveperson.net\nlpsnmedia.net\n",
+    "manus": "manus.im\nmanuscdn.com\n",
+    "openai": "chat.com\nchatgpt.com\nchatgpt.site\ncrixet.com\noaistatic.com\noaistatsig.com\noaiusercontent.com\nopenai.com\nsora.com\nopenai.com.cdn.cloudflare.net\nfull:openaiapi-site.azureedge.net\nfull:openaiassets.blob.core.windows.net\nfull:openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net\nfull:openaicom.imgix.net\nfull:openaicomproductionae4b.blob.core.windows.net\nfull:production-openaicom-storage.azureedge.net\nregexp:^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$\nfull:browser-intake-datadoghq.com @ads\nfull:o33249.ingest.sentry.io @ads\nfull:openai.qualtrics.com @ads\nchatgpt.livekit.cloud\nhost.livekit.cloud\nturn.livekit.cloud\n",
+    "perplexity": "perplexity.ai\nperplexity.com\npplx.ai\nfull:ppl-ai-file-upload.s3.amazonaws.com\nfull:pplx-res.cloudinary.com\n",
+    "poe": "poe.com\npoecdn.net\n",
+    "windsurf": "codeium.com\ncodeiumdata.com\nwindsurf.build\nwindsurf.com\n",
+    "xai": "grok.com\ngrok.x.com\ngrokipedia.com\nx.ai\n",
+    "youmind": "youmind.ai\nyoumind.com\nyoumind.site\n"
+  },
+  "root": "category-ai-!cn",
+  "snapshot_date": "2026-10-05",
+  "upstream": "https://github.com/v2fly/domain-list-community",
+  "upstream_ref": "master"
+}
