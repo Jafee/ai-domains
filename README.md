@@ -55,6 +55,6 @@ python3 scripts/update.py --snapshot sources.json --check
 python3 -m unittest discover -s tests -v
 ```
 
-`metadata.json` 记录规则数量、上游 commit 和文件哈希；`sources.json` 保存本次生成用到的规则数据，可离线复现。附带的初始快照获取于 2026-10-05，尚未固定上游 commit；第一次联网更新会补齐。
+`metadata.json` 记录规则数量、固定的上游 commit 和文件哈希；`sources.json` 保存本次生成用到的规则数据，可离线复现。每次联网更新都固定到同一个上游 commit，避免跨版本混用数据。
 
 上游域名数据来自 v2fly/domain-list-community，采用 MIT 许可，原许可见 [licenses/v2fly-domain-list-community.txt](licenses/v2fly-domain-list-community.txt)。
