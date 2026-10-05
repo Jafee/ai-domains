@@ -1,5 +1,5 @@
 {
-  "blocklist_sha256": "d487620c1c3654687d676ab4038dd8269b40ffd3df3d7047b084f5c2c8fa0106",
+  "blocklist_sha256": "eafbda50402bb44f14dda3b164876aa6e7bcb37260f3431ef2a28d62e3d6ea17",
   "domain_rule_count": 188,
   "expanded_entry_count": 189,
   "regex_rule_count": 1,
@@ -36,6 +36,6 @@
     "youmind": "8c5290267a6337eac913289072e61903e4145db16ce178cb88f303760b37af73"
   },
   "total_rule_count": 189,
-  "upstream_commit": null,
-  "upstream_commit_date": null
+  "upstream_commit": "63777333b7dd1ac57f790e466c0f6a647b9c7281",
+  "upstream_commit_date": "2026-10-04T05:31:03Z"
 }

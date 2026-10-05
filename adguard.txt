@@ -1,8 +1,8 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: unpinned bootstrap snapshot
-! Source date: 2026-10-05
+! Source revision: 63777333b7dd1ac57f790e466c0f6a647b9c7281
+! Source date: 2026-10-04T05:31:03Z
 ! Rules: 189 (188 domain + 1 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.

@@ -1,5 +1,5 @@
 {
-  "acquisition": "Complete line-numbered raw-file contents returned by web.run; branch not pinned to a commit.",
+  "acquisition": "GitHub archive at the exact upstream commit; only rule data retained.",
   "files": {
     "anthropic": "anthropic.com\nclau.de\nclaude.ai\nclaude.com\nclaude.dev\nclaudemcpclient.com\nclaudemcpcontent.com\nclaudeusercontent.com\nfull:servd-anthropic-website.b-cdn.net\n",
     "bytedance-ai-!cn": "include:dola\ncoze.com @!cn\nmarscode.com @!cn\ntrae.ai @!cn\n",
@@ -26,7 +26,9 @@
     "youmind": "youmind.ai\nyoumind.com\nyoumind.site\n"
   },
   "root": "category-ai-!cn",
-  "snapshot_date": "2026-10-05",
+  "snapshot_date": "2026-10-04",
   "upstream": "https://github.com/v2fly/domain-list-community",
+  "upstream_commit": "63777333b7dd1ac57f790e466c0f6a647b9c7281",
+  "upstream_commit_date": "2026-10-04T05:31:03Z",
   "upstream_ref": "master"
 }
