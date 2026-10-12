@@ -1,9 +1,9 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: 63777333b7dd1ac57f790e466c0f6a647b9c7281
-! Source date: 2026-10-04T05:31:03Z
-! Rules: 189 (188 domain + 1 regex)
+! Source revision: c6adacf29cc4fb05e04651fcf03e00989ef9f797
+! Source date: 2026-10-09T10:11:47Z
+! Rules: 190 (189 domain + 1 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
 !
@@ -182,6 +182,7 @@
 ||sora.com^
 ||spicywriter.com^
 ||stitch.withgoogle.com^
+||syntx.ai^
 ||talkai.info^
 ||tapnow.ai^
 ||themeforest.net^
