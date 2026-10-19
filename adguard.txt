@@ -1,9 +1,9 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: c6adacf29cc4fb05e04651fcf03e00989ef9f797
-! Source date: 2026-10-09T10:11:47Z
-! Rules: 190 (189 domain + 1 regex)
+! Source revision: c16efa599b12a9e4b327949b3ed3f8ffff4b33c3
+! Source date: 2026-10-19T04:34:24Z
+! Rules: 193 (192 domain + 1 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
 !
@@ -70,6 +70,7 @@
 ||cursor.com^
 ||cursor.sh^
 ||cursorapi.com^
+||cursorvm.com^
 ||daily-cloudcode-pa.googleapis.com^
 ||deepmind.com^
 ||deepmind.google^
@@ -153,6 +154,7 @@
 ||opal.google.com^
 ||openai.com^
 ||openai.com.cdn.cloudflare.net^
+||openai.org^
 ||openai.qualtrics.com^
 ||openaiapi-site.azureedge.net^
 ||openaiassets.blob.core.windows.net^
@@ -189,6 +191,7 @@
 ||trae.ai^
 ||tripo3d.ai^
 ||turn.livekit.cloud^
+||typesafe.ai^
 ||webchannel-alkalimakersuite-pa.clients6.google.com^
 ||windsurf.build^
 ||windsurf.com^
