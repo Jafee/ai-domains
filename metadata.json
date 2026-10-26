@@ -1,19 +1,19 @@
 {
-  "blocklist_sha256": "d30cb34659439e7b4befd2894b66a2fca986b24b6f07771422b1d8c2734cb0a8",
-  "domain_rule_count": 192,
-  "expanded_entry_count": 193,
+  "blocklist_sha256": "66af2d3f212d54e8b135de41e1bd50f00d029a9667928836a6e789eea26f04ce",
+  "domain_rule_count": 204,
+  "expanded_entry_count": 205,
   "regex_rule_count": 1,
   "root": "category-ai-!cn",
   "source_entry_types": {
-    "domain": 162,
-    "full": 30,
+    "domain": 173,
+    "full": 31,
     "regexp": 1
   },
   "source_file_count": 23,
   "source_sha256": {
-    "anthropic": "5f363bc0857863771a8c1adaf9f59062ad58885e30780fe29c22d281e7444e97",
+    "anthropic": "908e222f4b3de90d7b6dff9d347a9976b4c6b66a7648604fd9af9671d2cb80bb",
     "bytedance-ai-!cn": "80d8de4aea01467717758e0616799c22334f95f8a14e585d18f83e9351a90b95",
-    "category-ai-!cn": "befcd9c496794f17938b2d4196f887dfa7f211f7065d7fe3d134034ddff1f99c",
+    "category-ai-!cn": "a6527bd6bf6d2dab8469243a12cedd5fb3ad9fa83838ef63204665475c69fc1d",
     "cerebras": "713ea33f6828bb2ac34db413204ea4ddb5d8740aef64e521f46f55fbc99d771d",
     "comfy": "11d562b3473ef780ea2861e059c143bacd327738127aa5611a07665bf59930b1",
     "comfy-ui-launcher": "0ef0695fa9afb015d86d069c45f52c3cdd4954fcbf6b3b24c479c85c16295d64",
@@ -28,14 +28,14 @@
     "jetbrains-ai": "b1bb655fc82a45311745ef0513dc6889f76cb4bfc0cd9cd563788b5e502b6a53",
     "liveperson": "2e146391a816f4497b0a987f2d7edfb0e7e0e11ae450e47a4c0779a0868d7e22",
     "manus": "3fa777650b51936dd5f36c7f4763a025f2ed46570fbb4adc63e48eaaa14d1de5",
-    "openai": "fead1574b33237f57b34af203b9e7c69e34f15cfea4d645bed82ba18251daea9",
+    "openai": "9d08e1dbfd0e998dda170723e70ebf6bfb6c91cf9c8f99ba5399ca4f0a5a481e",
     "perplexity": "0c9d190a243e1fbd6b4739db086ec30af34a72a845dd36203b8befcab8a44601",
     "poe": "e689a8d337b64bcf760e5d8dfe03e3d29d8558063db93acba2d1d6eb9c11003a",
     "windsurf": "d6d082e40d180efbabde3b1a5bd8fe1bdc804f1a11b79d2128fe41e0b4dc4e16",
     "xai": "1e15c6018174f58f6a2f3710c84566909eee45a8092247280d244cf8ea7cd928",
     "youmind": "8c5290267a6337eac913289072e61903e4145db16ce178cb88f303760b37af73"
   },
-  "total_rule_count": 193,
-  "upstream_commit": "c16efa599b12a9e4b327949b3ed3f8ffff4b33c3",
-  "upstream_commit_date": "2026-10-19T04:34:24Z"
+  "total_rule_count": 205,
+  "upstream_commit": "664598567e92d797bea11bb83cf939d1f37e9512",
+  "upstream_commit_date": "2026-10-25T01:44:41Z"
 }

@@ -1,9 +1,9 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: c16efa599b12a9e4b327949b3ed3f8ffff4b33c3
-! Source date: 2026-10-19T04:34:24Z
-! Rules: 193 (192 domain + 1 regex)
+! Source revision: 664598567e92d797bea11bb83cf939d1f37e9512
+! Source date: 2026-10-25T01:44:41Z
+! Rules: 205 (204 domain + 1 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
 !
@@ -16,17 +16,21 @@
 ||aistudio.google.com^
 ||alkalicore-pa.clients6.google.com^
 ||alkalimakersuite-pa.clients6.google.com^
+||ant.dev^
 ||anthropic.com^
+||anthropic.team^
 ||antigravity-pa.googleapis.com^
 ||antigravity-unleash.goog^
 ||antigravity.google^
 ||antigravity.googleapis.com^
+||antspace.dev^
 ||anythingllm.com^
 ||arena.ai^
 ||bard.google.com^
 ||browser-intake-datadoghq.com^
 ||cerebras.ai^
 ||chat.com^
+||chatbotclaude.com^
 ||chatgpt.com^
 ||chatgpt.livekit.cloud^
 ||chatgpt.site^
@@ -36,10 +40,16 @@
 ||ciciaicdn.com^
 ||clau.de^
 ||claude.ai^
+||claude.app^
 ||claude.com^
 ||claude.dev^
+||claude.new^
+||claude.site^
+||claudeacademy.com^
 ||claudemcpclient.com^
 ||claudemcpcontent.com^
+||claudepages.dev^
+||claudestudio.com^
 ||claudeusercontent.com^
 ||clawhub.ai^
 ||clipdrop.co^
@@ -125,6 +135,7 @@
 ||lmstudio.ai^
 ||lovart.ai^
 ||lpsnmedia.net^
+||magnific.com^
 ||makersuite.google.com^
 ||manus.im^
 ||manuscdn.com^
@@ -146,6 +157,7 @@
 ||notegpt.io^
 ||novelai.net^
 ||o33249.ingest.sentry.io^
+||o33249.ingest.us.sentry.io^
 ||oaistatic.com^
 ||oaistatsig.com^
 ||oaiusercontent.com^
