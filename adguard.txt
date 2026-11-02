@@ -1,9 +1,9 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: 664598567e92d797bea11bb83cf939d1f37e9512
-! Source date: 2026-10-25T01:44:41Z
-! Rules: 205 (204 domain + 1 regex)
+! Source revision: 01add61fbaf719b55673d969615cd328e80f214c
+! Source date: 2026-11-01T07:46:05Z
+! Rules: 214 (213 domain + 1 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
 !
@@ -25,7 +25,11 @@
 ||antigravity.googleapis.com^
 ||antspace.dev^
 ||anythingllm.com^
+||appsgenaiserver-pa.clients.google.com^
+||appsgenaiserver-pa.clients6.google.com^
+||appsgenaiserver-pa.googleapis.com^
 ||arena.ai^
+||artificialanalysis.ai^
 ||bard.google.com^
 ||browser-intake-datadoghq.com^
 ||cerebras.ai^
@@ -52,6 +56,7 @@
 ||claudestudio.com^
 ||claudeusercontent.com^
 ||clawhub.ai^
+||cline.bot^
 ||clipdrop.co^
 ||cloudaicompanion.googleapis.com^
 ||cloudcode-pa.googleapis.com^
@@ -64,6 +69,8 @@
 ||comfy.org^
 ||comfyci.org^
 ||comfyregistry.org^
+||commandcode.ai^
+||context7.com^
 ||copilot-proxy.githubusercontent.com^
 ||copilot-stg.com^
 ||copilot-telemetry-service.githubusercontent.com^
@@ -141,6 +148,7 @@
 ||manuscdn.com^
 ||marscode.com^
 ||meta.ai^
+||metaaiusercontent.com^
 ||metaaivm.com^
 ||midjourney.com^
 ||minimax.io^
@@ -155,6 +163,7 @@
 ||notebooklm.google.com^
 ||notebooklm.googleapis.com^
 ||notegpt.io^
+||nousresearch.com^
 ||novelai.net^
 ||o33249.ingest.sentry.io^
 ||o33249.ingest.us.sentry.io^
