@@ -3,9 +3,10 @@
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
 ! Source revision: 01add61fbaf719b55673d969615cd328e80f214c
 ! Source date: 2026-11-01T07:46:05Z
-! Rules: 214 (213 domain + 1 regex)
+! Rules: 215 (213 domain + 2 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
+! Local additions: 1 rules from local-rules.txt
 !
 ||agentclientprotocol.com^
 ||ai.google.dev^
@@ -220,4 +221,5 @@
 ||youmind.ai^
 ||youmind.com^
 ||youmind.site^
+/(?:^|\.)aws-external-anthropic\.[a-z0-9-]+\.api\.aws$/
 /(?:^|\.)chatgpt-async-webps-prod-\S+-\d+\.webpubsub\.azure\.com$/

@@ -27,6 +27,7 @@ from urllib.request import Request, urlopen
 UPSTREAM = "v2fly/domain-list-community"
 ROOT_LIST = "category-ai-!cn"
 REPO_ROOT = Path(__file__).resolve().parents[1]
+LOCAL_RULES = REPO_ROOT / "local-rules.txt"
 OUTPUT_FILES = ("adguard.txt", "sources.json", "metadata.json")
 MAX_DOWNLOAD = 32 * 1024 * 1024
 MAX_SOURCE_BYTES = 32 * 1024 * 1024
@@ -272,7 +273,7 @@ def json_text(value: dict) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
 
 
-def build_artifacts(snapshot: dict) -> dict[str, str]:
+def build_artifacts(snapshot: dict, local: str = "") -> dict[str, str]:
     if snapshot.get("root") != ROOT_LIST or not isinstance(snapshot.get("files"), dict):
         raise UpdateError("Invalid source snapshot")
     files = {validate_name(name): canonical_source(text) for name, text in snapshot["files"].items()}
@@ -280,6 +281,11 @@ def build_artifacts(snapshot: dict) -> dict[str, str]:
     rules = {entry_rule(entry) for entry in entries}
     if not rules:
         raise UpdateError("Refusing to publish an empty subscription")
+    parsed, affiliated = parse_sources({"local-rules": canonical_source(local)})
+    if affiliated or any(isinstance(item, Include) or item.attrs for item in parsed["local-rules"]):
+        raise UpdateError("local-rules.txt does not support include:, @attributes or &affiliations")
+    local_rules = {entry_rule(entry) for entry in parsed["local-rules"]}
+    rules |= local_rules
     domain_rules = sorted((rule for rule in rules if rule.startswith("||")), key=lambda rule: rule[2:-1])
     regex_rules = sorted(rule for rule in rules if rule.startswith("/"))
     retained = {key: value for key, value in snapshot.items() if key != "files"}
@@ -295,6 +301,7 @@ def build_artifacts(snapshot: dict) -> dict[str, str]:
         f"! Rules: {len(rules)} ({len(domain_rules)} domain + {len(regex_rules)} regex)",
         "! Updates: weekly via GitHub Actions",
         "! Full-host rules intentionally include subdomains.",
+        f"! Local additions: {len(local_rules)} rules from local-rules.txt",
         "!",
     ]
     blocklist = "\n".join(header + domain_rules + regex_rules) + "\n"
@@ -307,6 +314,7 @@ def build_artifacts(snapshot: dict) -> dict[str, str]:
         "source_entry_types": dict(Counter(entry.kind for entry in entries)),
         "domain_rule_count": len(domain_rules),
         "regex_rule_count": len(regex_rules),
+        "local_rule_count": len(local_rules),
         "total_rule_count": len(rules),
         "blocklist_sha256": hashlib.sha256(blocklist.encode()).hexdigest(),
         "source_sha256": {name: hashlib.sha256(files[name].encode()).hexdigest() for name in sorted(used)},
@@ -333,8 +341,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", action="store_true", help="Check generated files instead of writing them")
     args = parser.parse_args(argv)
     try:
+        local = LOCAL_RULES.read_text(encoding="utf-8")
         snapshot = json.loads(args.snapshot.read_text(encoding="utf-8")) if args.snapshot else latest_snapshot()
-        artifacts = build_artifacts(snapshot)
+        artifacts = build_artifacts(snapshot, local)
         if args.check:
             for name, text in artifacts.items():
                 path = args.output_dir / name

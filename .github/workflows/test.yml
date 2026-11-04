@@ -9,6 +9,7 @@ name: Test generator
       - 'adguard.txt'
       - 'sources.json'
       - 'metadata.json'
+      - 'local-rules.txt'
   pull_request:
     paths:
       - 'scripts/**'
@@ -17,6 +18,7 @@ name: Test generator
       - 'adguard.txt'
       - 'sources.json'
       - 'metadata.json'
+      - 'local-rules.txt'
 
 permissions:
   contents: read
