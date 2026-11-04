@@ -29,6 +29,9 @@ def archive(files, extra=None):
     return stream.getvalue()
 
 
+AWS_RULE = r"/(?:^|\.)aws-external-anthropic\.[a-z0-9-]+\.api\.aws$/"
+
+
 def rules(artifacts):
     return [line for line in artifacts["adguard.txt"].splitlines() if line and not line.startswith("!")]
 
@@ -178,11 +181,13 @@ class FetchAndOutputTests(unittest.TestCase):
                 (output / name).write_text("previous version")
             bad = output / "bad.json"
             bad.write_text(json.dumps(snapshot({update.ROOT_LIST: "include:missing"})))
-            with contextlib.redirect_stderr(io.StringIO()):
+            (output / "local-rules.txt").write_text("")
+            local = patch.object(update, "LOCAL_RULES", output / "local-rules.txt")
+            with local, contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(update.main(["--snapshot", str(bad), "--output-dir", directory]), 1)
             for name in update.OUTPUT_FILES:
                 self.assertEqual((output / name).read_text(), "previous version")
-            with patch.object(update, "latest_snapshot", side_effect=update.UpdateError("download failed")), contextlib.redirect_stderr(io.StringIO()):
+            with local, patch.object(update, "latest_snapshot", side_effect=update.UpdateError("download failed")), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(update.main(["--output-dir", directory]), 1)
             for name in update.OUTPUT_FILES:
                 self.assertEqual((output / name).read_text(), "previous version")
@@ -194,20 +199,68 @@ class FetchAndOutputTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             output = Path(directory)
             update.write_artifacts(output, original)
+            (output / "local-rules.txt").write_text("")
             arguments = ["--snapshot", str(output / "sources.json"), "--output-dir", directory, "--check"]
-            self.assertEqual(update.main(arguments), 0)
-            (output / "adguard.txt").write_text("corrupted")
-            self.assertEqual(update.main(arguments), 1)
+            with patch.object(update, "LOCAL_RULES", output / "local-rules.txt"):
+                self.assertEqual(update.main(arguments), 0)
+                (output / "adguard.txt").write_text("corrupted")
+                self.assertEqual(update.main(arguments), 1)
             self.assertEqual((output / "adguard.txt").read_text(), "corrupted")
+
+
+class LocalRuleTests(unittest.TestCase):
+    def test_repo_local_regexp_is_merged_with_exact_conversion(self):
+        output = update.build_artifacts(snapshot({update.ROOT_LIST: "example.com\n"}), update.LOCAL_RULES.read_text(encoding="utf-8"))
+        self.assertIn(AWS_RULE, rules(output))
+        self.assertIn("||example.com^", rules(output))
+
+    def test_local_rules_are_deduplicated_counted_and_not_saved_as_sources(self):
+        output = update.build_artifacts(snapshot({update.ROOT_LIST: "example.com\n"}), "# note\nfull:example.com # dup\nlocal.example\n")
+        self.assertEqual(rules(output), ["||example.com^", "||local.example^"])
+        metadata = json.loads(output["metadata.json"])
+        self.assertEqual((metadata["local_rule_count"], metadata["total_rule_count"]), (2, 2))
+        self.assertIn("subdomains.\n! Local additions: 2 rules from local-rules.txt\n!\n", output["adguard.txt"])
+        self.assertEqual(list(json.loads(output["sources.json"])["files"]), [update.ROOT_LIST])
+
+    def test_aws_rule_matches_one_region_label_and_subdomains(self):
+        for host in ["aws-external-anthropic.us-east-1.api.aws", "a.aws-external-anthropic.eu-west-2.api.aws"]:
+            self.assertTrue(matches(AWS_RULE, host), host)
+        for host in ["aws-external-anthropic.api.aws", "aws-external-anthropic.us-east-1.api.aws.evil.org",
+                     "xaws-external-anthropic.us-east-1.api.aws", "aws-external-anthropic.a.b.api.aws"]:
+            self.assertFalse(matches(AWS_RULE, host), host)
+
+    def test_local_include_and_annotations_are_rejected(self):
+        files = {update.ROOT_LIST: "example.com\n", "anthropic": "claude.ai\n"}
+        for line in ["include:anthropic", "local.example @ai", "local.example &anthropic"]:
+            with self.subTest(line=line), self.assertRaises(update.UpdateError):
+                update.build_artifacts(snapshot(files), line)
+
+    def test_missing_local_rules_fails_and_keeps_all_outputs(self):
+        source = snapshot({update.ROOT_LIST: "example.com\n"})
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            output = Path(directory)
+            for name in update.OUTPUT_FILES:
+                (output / name).write_text("previous version")
+            (output / "good.json").write_text(json.dumps(source))
+            local = output / "local-rules.txt"
+            with patch.object(update, "LOCAL_RULES", local), patch.object(update, "latest_snapshot", return_value=source):
+                for arguments in [["--snapshot", str(output / "good.json")], []]:
+                    self.assertEqual(update.main([*arguments, "--output-dir", directory]), 1)
+                    for name in update.OUTPUT_FILES:
+                        self.assertEqual((output / name).read_text(), "previous version")
+                local.write_text("")
+                self.assertEqual(update.main(["--output-dir", directory]), 0)
 
 
 class CurrentSnapshotTests(unittest.TestCase):
     def test_current_snapshot_has_complete_domain_and_regex_coverage(self):
         source = json.loads((update.REPO_ROOT / "sources.json").read_text())
-        artifacts = update.build_artifacts(source)
+        local = update.LOCAL_RULES.read_text(encoding="utf-8")
+        artifacts = update.build_artifacts(source, local)
         generated_rules = rules(artifacts)
         metadata = json.loads(artifacts["metadata.json"])
         entries, _ = update.expand_sources({name: update.canonical_source(text) for name, text in source["files"].items()})
+        entries += update.parse_sources({"local-rules": update.canonical_source(local)})[0]["local-rules"]
         expected = {update.entry_rule(entry) for entry in entries}
         self.assertEqual(set(generated_rules), expected)
         self.assertEqual(len(generated_rules), len(set(generated_rules)))

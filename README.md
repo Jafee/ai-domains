@@ -35,7 +35,13 @@ https://raw.githubusercontent.com/Jafee/ai-domains/main/adguard.txt
 | `keyword:` | 转成域名匹配正则 |
 | `regexp:` | 转成 AdGuard 正则，将主机名起始锚点扩展为域名层级边界 |
 
-`||example.com^` 屏蔽域名本身及其任意层级子域名，见 [AdGuard 官方语法](https://adguard-dns.io/kb/general/dns-filtering-syntax/)。不额外添加上游分类以外的服务，也不将具体 CDN 主机扩大成整个 CDN 的根域名。上游若出现无法正确转换的语法，更新会失败并保留旧版本，不会跳过条目后发布残缺列表。
+`||example.com^` 屏蔽域名本身及其任意层级子域名，见 [AdGuard 官方语法](https://adguard-dns.io/kb/general/dns-filtering-syntax/)。除 `local-rules.txt` 里手工列出的条目外，不额外添加上游分类以外的服务，也不将具体 CDN 主机扩大成整个 CDN 的根域名。上游若出现无法正确转换的语法，更新会失败并保留旧版本，不会跳过条目后发布残缺列表。
+
+## 本地附加规则
+
+`local-rules.txt` 用来补充上游分类尚未收录、但需要屏蔽的具体主机，例如 `aws-external-anthropic.<区域>.api.aws` (Anthropic 在 AWS 上的 API 入口)。语法与上游 v2fly 数据文件相同：每行一条 `domain:`、`full:`、`regexp:`、`keyword:` 或裸域名，`#` 之后为注释；不支持 `include:`、`@属性` 和 `&分类`，出现即更新失败。
+
+本地规则按上表转换，与上游规则合并去重后写入 `adguard.txt`，数量记在头部的 `! Local additions:` 和 `metadata.json` 的 `local_rule_count`；`sources.json` 只保存上游数据。文件缺失时更新失败并保留旧版本。修改后运行 `python3 scripts/update.py --snapshot sources.json` 重新生成并一起提交，否则 CI 的 `--check` 会失败。
 
 ## 本地生成和验证
 

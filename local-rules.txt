@@ -1,0 +1,4 @@
+# Local additions merged into adguard.txt by scripts/update.py (see README).
+# v2fly data-file syntax; include:, @attributes and &affiliations are rejected.
+# Anthropic API endpoints on AWS: aws-external-anthropic.<region>.api.aws
+regexp:^aws-external-anthropic\.[a-z0-9-]+\.api\.aws$

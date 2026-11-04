@@ -1,8 +1,9 @@
 {
-  "blocklist_sha256": "c183b63f062fb4c289dbd24fba167c9598416e6a7a6c35be2736e8d9cfc91251",
+  "blocklist_sha256": "90e08115af73989abf13bc6e10d2377df7c8a12cd5b23136d65f1681f65f5c19",
   "domain_rule_count": 213,
   "expanded_entry_count": 214,
-  "regex_rule_count": 1,
+  "local_rule_count": 1,
+  "regex_rule_count": 2,
   "root": "category-ai-!cn",
   "source_entry_types": {
     "domain": 179,
@@ -35,7 +36,7 @@
     "xai": "1e15c6018174f58f6a2f3710c84566909eee45a8092247280d244cf8ea7cd928",
     "youmind": "8c5290267a6337eac913289072e61903e4145db16ce178cb88f303760b37af73"
   },
-  "total_rule_count": 214,
+  "total_rule_count": 215,
   "upstream_commit": "01add61fbaf719b55673d969615cd328e80f214c",
   "upstream_commit_date": "2026-11-01T07:46:05Z"
 }
