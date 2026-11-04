@@ -1,6 +1,6 @@
 # 加入本地附加规则 local-rules.txt，并用它拦截 aws-external-anthropic.{region}.api.aws
 
-日期：2026-11-04 ｜ 分支：`feat/local-rules` ｜ 状态：实现中
+日期：2026-11-04 ｜ 分支：`feat/local-rules` ｜ 状态：待合并
 
 ## 背景与问题
 
@@ -82,8 +82,11 @@ forbid_new_deps: true
 
 ## 评审记录
 
-(暂无)
+- 实现 `1acaed4`：预算 7/7 文件、+90/100 行、1/1 新文件，范围外 0。干净 worktree 里跑 Verification：26 个测试 OK，`Verified 215 rules from 23 source files.`，grep 计数 1。
+- codex 第 1 轮 (gpt-6-astra，xhigh，read-only，session 01a1a715-0568-71f0-85ec-a0e4cf8b97f6)：**APPROVE**，0 条 blocking，0 条建议。它的只读沙箱跑不了 3 个需要写文件的测试，那 3 个由主线程在上面的干净 worktree 里跑过。
 
 ## 后续建议
 
 - 可以把 `aws-external-anthropic` 这条提交给上游 v2fly 的 `anthropic` 列表，上游收录后删掉本地这条。
+- (实现者) 本地文件解析出错时，报错行号是去掉注释和空行之后的行号，不是文件里的原始行号。
+- (实现者) `local_rule_count` 现在等于本地文件转换出的规则数，含与上游重复的条目；如果想表示「真正新增的条数」，改成本地规则减去上游规则即可。
