@@ -1,18 +1,18 @@
 {
-  "blocklist_sha256": "90e08115af73989abf13bc6e10d2377df7c8a12cd5b23136d65f1681f65f5c19",
-  "domain_rule_count": 213,
-  "expanded_entry_count": 214,
+  "blocklist_sha256": "7a12921a1f6a169f44b7d64d2a5d94de22a1b187b6a6438afa8e6c0607ba36c3",
+  "domain_rule_count": 217,
+  "expanded_entry_count": 218,
   "local_rule_count": 1,
   "regex_rule_count": 2,
   "root": "category-ai-!cn",
   "source_entry_types": {
-    "domain": 179,
-    "full": 34,
+    "domain": 180,
+    "full": 37,
     "regexp": 1
   },
   "source_file_count": 23,
   "source_sha256": {
-    "anthropic": "908e222f4b3de90d7b6dff9d347a9976b4c6b66a7648604fd9af9671d2cb80bb",
+    "anthropic": "001f4716123dcc638fec2dd4461b3f28e32cd595adc6cfae08d26e3d7ebff852",
     "bytedance-ai-!cn": "80d8de4aea01467717758e0616799c22334f95f8a14e585d18f83e9351a90b95",
     "category-ai-!cn": "a8df529a11506cc057a77d2c7d09a5bc5a1c116993b78905440713f0195ac08e",
     "cerebras": "713ea33f6828bb2ac34db413204ea4ddb5d8740aef64e521f46f55fbc99d771d",
@@ -22,7 +22,7 @@
     "dola": "e10f0c2919908eae6c3c35bca0288821e5a4a568bcd3316ee7b6c6e0da82e907",
     "elevenlabs": "4c284a7e5947f4a40d40c9dc8fedf3e9e3091db0c7680b913b2b19db36ebd561",
     "envato": "07df2d1f56a06149222183b025dcdb2ef4db3eb49ea0a6d1ba864cbd260f6f3b",
-    "github-copilot": "c6f200f944dec93e29827a6d1c0b1b448a2592525d5888476a79669c9316fea9",
+    "github-copilot": "ad66084117755623b73f8cd3be07c37c57b4e09bf3eac8f2ad761c56c0ce7528",
     "google-deepmind": "85bcca087613bf412b9b311064798cdc7e22707abf7dc6c0bb073b8a72ba7405",
     "groq": "d779541783d4c835ad341a13ae3c3a008bfa3e535b46f79518b92bdef17588bb",
     "huggingface": "67f5861b31232701f884efd38d9436dd89183fccbd01d6f10d791b9ef6fbf4b8",
@@ -33,10 +33,10 @@
     "perplexity": "0c9d190a243e1fbd6b4739db086ec30af34a72a845dd36203b8befcab8a44601",
     "poe": "e689a8d337b64bcf760e5d8dfe03e3d29d8558063db93acba2d1d6eb9c11003a",
     "windsurf": "d6d082e40d180efbabde3b1a5bd8fe1bdc804f1a11b79d2128fe41e0b4dc4e16",
-    "xai": "1e15c6018174f58f6a2f3710c84566909eee45a8092247280d244cf8ea7cd928",
+    "xai": "4c95fc6465d5f135f5d27935e9b44f6fcc82cfaa0eb6bb4e3232c44c5c581628",
     "youmind": "8c5290267a6337eac913289072e61903e4145db16ce178cb88f303760b37af73"
   },
-  "total_rule_count": 215,
-  "upstream_commit": "01add61fbaf719b55673d969615cd328e80f214c",
-  "upstream_commit_date": "2026-11-01T07:46:05Z"
+  "total_rule_count": 219,
+  "upstream_commit": "e8d7a10a15bf662c927a40a3aa680bae86379608",
+  "upstream_commit_date": "2026-11-08T01:10:03Z"
 }

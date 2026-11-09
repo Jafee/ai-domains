@@ -1,9 +1,9 @@
 ! Title: ai-domains - AI outside mainland China
 ! Description: Expanded v2fly category-ai-!cn; listed hosts and all subdomains.
 ! Source: https://github.com/v2fly/domain-list-community/blob/master/data/category-ai-!cn
-! Source revision: 01add61fbaf719b55673d969615cd328e80f214c
-! Source date: 2026-11-01T07:46:05Z
-! Rules: 215 (213 domain + 2 regex)
+! Source revision: e8d7a10a15bf662c927a40a3aa680bae86379608
+! Source date: 2026-11-08T01:10:03Z
+! Rules: 219 (217 domain + 2 regex)
 ! Updates: weekly via GitHub Actions
 ! Full-host rules intentionally include subdomains.
 ! Local additions: 1 rules from local-rules.txt
@@ -122,12 +122,14 @@
 ||grazie.aws.intellij.net^
 ||grok.com^
 ||grok.x.com^
+||grokbot.com^
 ||grokipedia.com^
 ||groq.com^
 ||h2o.ai^
 ||hf.co^
 ||hf.space^
 ||host.livekit.cloud^
+||http-intake.logs.us5.datadoghq.com^
 ||huggingface.co^
 ||jasper.ai^
 ||jetbrains.ai^
@@ -166,6 +168,7 @@
 ||notegpt.io^
 ||nousresearch.com^
 ||novelai.net^
+||o1158394.ingest.us.sentry.io^
 ||o33249.ingest.sentry.io^
 ||o33249.ingest.us.sentry.io^
 ||oaistatic.com^
@@ -198,6 +201,7 @@
 ||pplx-res.cloudinary.com^
 ||pplx.ai^
 ||proactivebackend-pa.googleapis.com^
+||production-copilot-host-westus.webpubsub.azure.com^
 ||production-openaicom-storage.azureedge.net^
 ||qoder.com^
 ||robinfrontend-pa.googleapis.com^
